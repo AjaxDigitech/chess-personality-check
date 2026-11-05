@@ -40,6 +40,6 @@ export default async function handler(req, res) {
     }
     return res.status(400).json({ error: 'Unknown action' });
   } catch (e) {
-    return res.status(500).json({ error: 'Stats unavailable' });
+    return res.status(500).json({ error: String(e.message || e) });
   }
 }
